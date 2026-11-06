@@ -32,7 +32,7 @@ If you need something only the user can provide (an API key, a decision, a Chrom
 | # | Step | When | Status | Handover |
 |---|---|---|---|---|
 | 00 | Scaffold monorepo | Prep day | TODO | – |
-| 01 | Microburbs client, cache, Property resolver | Prep day | TODO | – |
+| 01 | Microburbs client, cache, Property resolver | Prep day | DONE | [01](docs/handovers/01-microburbs-client.md) |
 | 02 | Topic tools → Evidence | Prep day | TODO | – |
 | 03 | LLM adapter, mock provider, answer engine, `/ask` SSE | Prep day | TODO | – |
 | 04 | Listing Context extraction + background relay | Prep day | TODO | – |
@@ -104,6 +104,7 @@ If you need something only the user can provide (an API key, a decision, a Chrom
 
 ### 00 — Scaffold monorepo
 **Goal:** an empty-but-running skeleton everyone after you builds on.
+**Note (added in step 01):** step 01 was done first and already created the pnpm workspace root, `shared/` (with `Property`), `server/` (`dotenv`, `tsx`, `src/env.ts`, `src/microburbs/`), `server/.env.example` and `.gitignore`. Extend these rather than recreating them: add `extension/` to `pnpm-workspace.yaml`, add Hono to `server/`, and merge new env vars into the existing `.env.example`.
 **Scope:**
 - pnpm workspace with `extension/`, `server/`, `shared/`.
 - WXT + React extension: MV3, host permissions for `*://*.realestate.com.au/*`, `*://*.domain.com.au/*`, and the server URL (`http://localhost:8787/*`). A content script that logs "Hlicky loaded" on both sites. Background service worker stub. Dashboard page stub.

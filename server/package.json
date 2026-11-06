@@ -1,0 +1,19 @@
+{
+  "name": "@hlicky/server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "mb:probe": "tsx scripts/mb-probe.ts",
+    "typecheck": "tsc -p ."
+  },
+  "dependencies": {
+    "@hlicky/shared": "workspace:*",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}
